@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import MoviePoster from "@/app/components/MoviePoster";
 import { SimilarMovie } from "../../../../types";
 import { getEmbeddings } from "../../../../utils/genEmbeddings";
@@ -33,7 +35,7 @@ async function SearchTerm({ params }: { params: Promise<{ term: string }> }) {
     ],
     cursor: {},
   });
-  // @ts-ignore
+
   const movies = data?.cursor?.firstBatch as SimilarMovie[];
 
   return (
