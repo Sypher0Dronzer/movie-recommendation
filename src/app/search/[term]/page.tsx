@@ -33,6 +33,7 @@ async function SearchTerm({ params }: { params: Promise<{ term: string }> }) {
     ],
     cursor: {},
   });
+  // @ts-ignore
   const movies = data?.cursor?.firstBatch as SimilarMovie[];
 
   return (

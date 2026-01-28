@@ -40,7 +40,9 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
     ],
     cursor: {},
   });
+  // @ts-ignore
   const similarMovies = data?.cursor?.firstBatch as SimilarMovie[];
+  // @ts-ignore
   similarMovies.shift();
 
   return (
