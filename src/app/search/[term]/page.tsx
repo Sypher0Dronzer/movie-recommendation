@@ -6,7 +6,7 @@ import { getEmbeddings } from "../../../../utils/genEmbeddings";
 import { prisma } from "../../../../lib/prisma";
 
 // refresh cache every 24 hours
-export const revalidate = 60 * 60 * 24;
+export const revalidate = 86400;
 
 async function SearchTerm({ params }: { params: Promise<{ term: string }> }) {
   const { term } = await params;
