@@ -9,7 +9,7 @@ const searchParams = request.nextUrl.searchParams;
   const query = searchParams.get('q'); 
 
   if(!query) return NextResponse.json({suggestions:[]});
-console.log(' --------------------------query parsed--------------')
+console.log(' --------------------------query parsed--------------') 
   const data = await prisma.$runCommandRaw({
      aggregate: "movies_data",
     pipeline: [
