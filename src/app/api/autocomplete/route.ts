@@ -3,10 +3,13 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "../../../../lib/prisma";
 
 export async function GET(request: NextRequest) {
+console.log(' --------------------------entered backend--------------')
+
 const searchParams = request.nextUrl.searchParams;
   const query = searchParams.get('q'); 
+
   if(!query) return NextResponse.json({suggestions:[]});
-console.log(' we entered before auto complete')
+console.log(' --------------------------query parsed--------------')
   const data = await prisma.$runCommandRaw({
      aggregate: "movies_data",
     pipeline: [
@@ -31,6 +34,8 @@ console.log(' we entered before auto complete')
     ],
 cursor: {},}
   )
+console.log(' --------------------------recerived data from mongo for autocpmplete--------------')
+
   const listObj= data?.cursor?.firstBatch 
   const suggestions = listObj.map((e)=> e["Title"])
 
