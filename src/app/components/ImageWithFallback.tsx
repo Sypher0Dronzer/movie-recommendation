@@ -22,13 +22,13 @@ const ImageWithFallback = (props: {
 
 
   return (
-    <Image
+    <img
       width={200}
       height={350}
       {...props}
       src={imgSrc}
       onError={() => {
-        deleteMovieFromDB()
+        // deleteMovieFromDB()
         setImgSrc(
           "https://davidkoepp.com/wp-content/themes/blankslate/images/Movie%20Placeholder.jpg"
         );

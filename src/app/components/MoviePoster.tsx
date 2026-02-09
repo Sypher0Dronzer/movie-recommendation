@@ -1,7 +1,8 @@
 import React from 'react'
-import { Movie, SimilarMovie } from '../../../types';
+import { Movie, PosterMovie, SimilarMovie } from '../../../types';
 import Link from 'next/link';
 import ImageWithFallback from './ImageWithFallback';
+
 
 const MoviePoster = ({
   index,
@@ -10,7 +11,7 @@ const MoviePoster = ({
 }: {
   index?: number;
   similarityRating?: number;
-  movie: Movie | SimilarMovie;
+  movie: PosterMovie;
 }) => {
   return (
     <Link key={movie.id} href={`/movie/${movie.id}`} className="sm:w-52 w-36 ">

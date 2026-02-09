@@ -30,4 +30,9 @@ export type SimilarMovie = {
   similarityScore: number;
 } & Movie;
 
-
+export type PosterMovie = {
+  id:string;
+  Poster:string;
+  Title:string;
+  Genre:String;
+}

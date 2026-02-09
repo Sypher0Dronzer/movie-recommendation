@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import React from "react";
+import React, { Suspense } from "react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import MoviePoster from "@/app/components/MoviePoster";
@@ -86,8 +86,12 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
         <h2 className="sm:text-3xl text-xl pt-10 pb-6 font-bold ">
           Similar Films you may like
         </h2>
-        
+        <Suspense fallback={
+          <div>Loading ...</div>
+        }>
+
         <SimilarMoviesSlider movies={similarMovies} />
+        </Suspense>
       </div>
     </div>
   );
