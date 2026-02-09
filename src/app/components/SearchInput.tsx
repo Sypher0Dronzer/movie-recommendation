@@ -26,6 +26,7 @@ const SearchInput = () => {
       setIsLoading(true);
       try {
         const response = await fetch(`/api/autocomplete?q=${encodeURIComponent(debounceSearch)}`)
+        console.log(response)
         const data = await response.json()
         setSuggestions(data.suggestions ||[])
       } catch (error) {
