@@ -4,9 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": " next build",
+  
     "start": "next start",
-    "postinstall": "npx prisma generate"
+    "postinstall": "npx prisma generate",
+    "seed": "npx tsx prisma/seed.ts",
+    "seed:articles": "npx tsx prisma/seed-articles.ts",
+    "copy-prisma-engine": "cp ./src/generated/prisma/client/libquery_engine-rhel-openssl-3.0.x.so.node ./src/generated/prisma/libquery_engine-rhel-openssl-3.0.x.so.node || true",
+    "build": "prisma generate && prisma migrate deploy && npm run copy-prisma-engine && next build"
   },
   "dependencies": {
     "@mistralai/mistralai": "^1.13.0",
