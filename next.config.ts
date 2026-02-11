@@ -19,6 +19,7 @@ const nextConfig = {
     experimental: {
         authInterrupts: true,
     },
+    turbopack: {},
     webpack: (config, { isServer }) => {
         if (isServer) {
             config.plugins = [...config.plugins, new PrismaPlugin()];
