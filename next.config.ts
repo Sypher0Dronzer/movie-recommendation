@@ -1,4 +1,5 @@
 // import { PrismaPlugin } from "@prisma/nextjs-monorepo-workaround-plugin";
+//@ts-nocheck
 import { PrismaPlugin} from '@prisma/nextjs-monorepo-workaround-plugin'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
